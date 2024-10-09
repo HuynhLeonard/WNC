@@ -35,7 +35,7 @@ public class ActorController {
             return ResponseEntity.ok(actor);
         } catch (EntityNotFoundException e) {
             //return new ResponseEntity<String>(e.getMessage(), HttpStatus.OK);
-            return ResponseEntity.status(404).body(e.getMessage());
+            return ResponseEntity.status(200).body(e.getMessage());
         }
     }
 
@@ -51,7 +51,7 @@ public class ActorController {
             boolean success = actorService.deleteActor(id);
             return ResponseEntity.ok("Actor " + id + " has been deleted.");
         } catch (EntityNotFoundException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
+            return ResponseEntity.status(200).body(e.getMessage());
         }
         //Actor actor = actorService.deleteActor(id);
         //return ResponseEntity.ok(actor);
@@ -63,7 +63,7 @@ public class ActorController {
             Actor actor = actorService.updateActor(id, actorDTO);
             return ResponseEntity.ok(actor);
         } catch (EntityNotFoundException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
+            return ResponseEntity.status(200).body(e.getMessage());
         }
 
     }
