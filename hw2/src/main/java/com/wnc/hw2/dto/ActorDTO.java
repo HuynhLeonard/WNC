@@ -17,6 +17,6 @@ public class ActorDTO {
     private String first_name;
 
     @NotBlank(message = "Last name is required")
-    @Size(min = 1, max = 45, message = "Last name must be between 2 and 45 characters")
+    @Size(min = 1, max = 45, message = "Last name must be between 1 and 45 characters")
     private String last_name;
 }

@@ -4,6 +4,7 @@ import com.wnc.hw2.dto.ActorDTO;
 import com.wnc.hw2.model.Actor;
 import com.wnc.hw2.service.ActorService;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ public class ActorController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createActor(@RequestBody ActorDTO actorDTO) {
+    public ResponseEntity<?> createActor(@RequestBody @Valid ActorDTO actorDTO) {
         Actor actor = actorService.createNewActor(actorDTO);
         return new  ResponseEntity<String>(actor.toString(), HttpStatus.OK);
     }
@@ -58,7 +59,7 @@ public class ActorController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> updateActor(@PathVariable Long id, @RequestBody ActorDTO actorDTO) {
+    public ResponseEntity<?> updateActor(@PathVariable Long id, @RequestBody @Valid ActorDTO actorDTO) {
         try {
             Actor actor = actorService.updateActor(id, actorDTO);
             return ResponseEntity.ok(actor);
