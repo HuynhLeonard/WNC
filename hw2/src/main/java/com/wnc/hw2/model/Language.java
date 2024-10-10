@@ -1,14 +1,12 @@
 package com.wnc.hw2.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.Instant;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,14 +14,19 @@ import java.time.Instant;
 @Table(name = "language")
 public class Language {
     @Id
-    @Column(name = "language_id", columnDefinition = "tinyint UNSIGNED not null")
-    private Short id;
+    @Column(name = "language_id")
+    private Long id;
 
     @Column(name = "name", nullable = false, length = 20)
     private String name;
 
-    @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
+    private String lastUpdate;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "language_id")
+    private List<Film> language_id;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "original_language_id")
+    private List<Film> original_language_id;
 
 }

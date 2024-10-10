@@ -15,53 +15,46 @@ import java.time.Instant;
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "film_id", columnDefinition = "smallint UNSIGNED not null")
-    private Integer id;
+    @Column(name = "film_id", unique = true, nullable = false)
+    private Long id;
 
-    @Column(name = "title", nullable = false, length = 128)
+    @Column(name = "title", length = 255, nullable = false)
     private String title;
 
-    @Lob
     @Column(name = "description")
     private String description;
 
     @Column(name = "release_year")
-    private Integer releaseYear;
+    private Integer year;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "language_id", nullable = false)
-    private Language language;
+    private Language language_id;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "original_language_id")
-    private Language originalLanguage;
+    private Language original_language_id;
 
-    @ColumnDefault("3")
-    @Column(name = "rental_duration", columnDefinition = "tinyint UNSIGNED not null")
-    private Short rentalDuration;
+    @Column(name = "rental_duration", nullable = false)
+    private Long rentalDuration;
 
-    @ColumnDefault("4.99")
-    @Column(name = "rental_rate", nullable = false, precision = 4, scale = 2)
-    private BigDecimal rentalRate;
+    @Column(name = "rental_rate", nullable = false, precision = 4)
+    private BigDecimal rental_rate;
 
-    @Column(name = "length", columnDefinition = "smallint UNSIGNED")
+    @Column(name = "length")
     private Integer length;
 
-    @ColumnDefault("19.99")
-    @Column(name = "replacement_cost", nullable = false, precision = 5, scale = 2)
-    private BigDecimal replacementCost;
+    @Column(name = "replacement_cost", nullable = false, precision = 5)
+    private BigDecimal replacement_cost;
 
-    @ColumnDefault("G")
-    @Lob
-    @Column(name = "rating")
-    private String rating;
+    @Column(name = "rating", length = 5)
+    @Convert(converter = RatingConverter.class)
+    private Rating rating;
 
-    @Lob
-    @Column(name = "special_features")
-    private String specialFeatures;
+    @Column(name = "special_features", length = 54)
+    private String special_features;
 
-    @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "last_update", nullable = false)
-    private Instant lastUpdate;
-
+    private String lastUpdate;
 }
