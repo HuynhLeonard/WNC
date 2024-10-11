@@ -27,15 +27,14 @@ public class ActorController {
     @GetMapping
     ResponseEntity<ApiResponse<List<Actor>>> getAllActor() {
         List<Actor> actors = actorService.getAllActor();
-        ApiResponse apiResponse = new ApiResponse();
+        ApiResponse<List<Actor>> apiResponse = new ApiResponse<>();
         apiResponse.setResult(actors);
-        //return new ResponseEntity<List<Actor>>(actors, HttpStatus.OK);
         return ResponseEntity.ok(apiResponse);
     }
 
     @GetMapping("/{id}")
     ResponseEntity<ApiResponse<Actor>> getActorById(@PathVariable("id") Long id){
-        ApiResponse apiResponse = new ApiResponse();
+        ApiResponse<Actor> apiResponse = new ApiResponse<>();
             Actor actor = actorService.getSingleActor(id);
             apiResponse.setResult(actor);
             return ResponseEntity.ok(apiResponse);
@@ -44,7 +43,9 @@ public class ActorController {
     @PostMapping
     public ResponseEntity<?> createActor(@RequestBody @Valid ActorCreateRequest actorDTO) {
         Actor actor = actorService.createNewActor(actorDTO);
-        return new  ResponseEntity<String>(actor.toString(), HttpStatus.CREATED);
+        ApiResponse<String> apiResponse = new ApiResponse<>();
+        apiResponse.setResult(actor.toString());
+        return ResponseEntity.status(HttpStatus.CREATED).body(apiResponse);
     }
 
     @DeleteMapping("/{id}")
@@ -55,8 +56,6 @@ public class ActorController {
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(200).body(e.getMessage());
         }
-        //Actor actor = actorService.deleteActor(id);
-        //return ResponseEntity.ok(actor);
     }
 
     @PatchMapping("/{id}")
