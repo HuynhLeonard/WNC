@@ -1,6 +1,9 @@
 package com.wnc.hw2.controller;
 
 import com.wnc.hw2.dto.ActorDTO;
+import com.wnc.hw2.dto.ApiResponse;
+import com.wnc.hw2.dto.request.ActorCreateRequest;
+import com.wnc.hw2.exception.ErrorCode;
 import com.wnc.hw2.model.Actor;
 import com.wnc.hw2.service.ActorService;
 import jakarta.persistence.EntityNotFoundException;
@@ -22,28 +25,26 @@ public class ActorController {
     private final ActorService actorService;
 
     @GetMapping
-    ResponseEntity<List<Actor>> getAllActor() {
+    ResponseEntity<ApiResponse<List<Actor>>> getAllActor() {
         List<Actor> actors = actorService.getAllActor();
+        ApiResponse apiResponse = new ApiResponse();
+        apiResponse.setResult(actors);
         //return new ResponseEntity<List<Actor>>(actors, HttpStatus.OK);
-        return ResponseEntity.ok(actors);
+        return ResponseEntity.ok(apiResponse);
     }
 
     @GetMapping("/{id}")
-    ResponseEntity<?> getActorById(@PathVariable("id") Long id){
-        try {
+    ResponseEntity<ApiResponse<Actor>> getActorById(@PathVariable("id") Long id){
+        ApiResponse apiResponse = new ApiResponse();
             Actor actor = actorService.getSingleActor(id);
-            //return new ResponseEntity<Actor>(actor, HttpStatus.OK);
-            return ResponseEntity.ok(actor);
-        } catch (EntityNotFoundException e) {
-            //return new ResponseEntity<String>(e.getMessage(), HttpStatus.OK);
-            return ResponseEntity.status(200).body(e.getMessage());
-        }
+            apiResponse.setResult(actor);
+            return ResponseEntity.ok(apiResponse);
     }
 
     @PostMapping
-    public ResponseEntity<?> createActor(@RequestBody @Valid ActorDTO actorDTO) {
+    public ResponseEntity<?> createActor(@RequestBody @Valid ActorCreateRequest actorDTO) {
         Actor actor = actorService.createNewActor(actorDTO);
-        return new  ResponseEntity<String>(actor.toString(), HttpStatus.OK);
+        return new  ResponseEntity<String>(actor.toString(), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")

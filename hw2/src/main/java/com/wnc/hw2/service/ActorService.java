@@ -1,6 +1,9 @@
 package com.wnc.hw2.service;
 
 import com.wnc.hw2.dto.ActorDTO;
+import com.wnc.hw2.dto.request.ActorCreateRequest;
+import com.wnc.hw2.exception.AppException;
+import com.wnc.hw2.exception.ErrorCode;
 import com.wnc.hw2.model.Actor;
 import com.wnc.hw2.repository.ActorRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -27,11 +30,11 @@ public class ActorService {
     // requirement 2: View single actor
     public Actor getSingleActor(Long id){
         return actorRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Actor not found with id: " + id));
+                .orElseThrow(() -> new AppException(ErrorCode.ACTOR_NOT_EXISTED));
     }
 
     // requirement 3
-    public Actor createNewActor(ActorDTO actorDTO){
+    public Actor createNewActor(ActorCreateRequest actorDTO){
         Actor newActor = new Actor();
         newActor.setFirst_name(actorDTO.getFirst_name());
         newActor.setLast_name(actorDTO.getLast_name());
@@ -46,7 +49,7 @@ public class ActorService {
     // requirement 4
     public boolean deleteActor(Long id){
         Actor actor = actorRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Actor not found with id: " + id));
+                .orElseThrow(() -> new AppException(ErrorCode.ACTOR_NOT_EXISTED));
         if(actor != null) {
             actorRepository.deleteById(id);
             return true;
@@ -58,7 +61,7 @@ public class ActorService {
     public Actor updateActor(Long actorId, ActorDTO actorDTO) {
         // Find the actor by ID or throw an exception if not found
         Actor actor = actorRepository.findById(actorId)
-                .orElseThrow(() -> new EntityNotFoundException("Actor not found with id: " + actorId));
+                .orElseThrow(() -> new AppException(ErrorCode.ACTOR_NOT_EXISTED));
 
         // Update the actor details
         if(actorDTO.getFirst_name() != null && !actorDTO.getFirst_name().isEmpty()){
