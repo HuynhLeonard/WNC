@@ -12,11 +12,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class ActorDTO {
-    @NotBlank(message = "This field cannot be blank")
-    @Size(min = 1, max = 45, message = "First name must be between 1 and 45 characters")
     private String first_name;
-
-    @NotBlank(message = "Last name is required")
-    @Size(min = 1, max = 45, message = "Last name must be between 1 and 45 characters")
     private String last_name;
 }
