@@ -25,7 +25,6 @@ public class Actor {
     @Column(name = "last_name", nullable = false, length = 45)
     private String last_name;
 
-    @ColumnDefault("CURRENT_TIMESTAMP")
     @Column(name = "last_update", nullable = false)
     private String lastUpdate;
 

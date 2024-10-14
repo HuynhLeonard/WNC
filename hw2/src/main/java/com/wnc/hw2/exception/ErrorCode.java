@@ -25,6 +25,8 @@ public enum ErrorCode {
     FILM_SPECIAL_FEATURES_INVALID(2008, "Film special features are invalid", HttpStatus.BAD_REQUEST),
     FILM_RENTAL_RATE_INVALID(2009, "Film rental rate must be a positive value", HttpStatus.BAD_REQUEST),
     FILM_REPLACEMENT_COST_INVALID(2010, "Film replacement cost must be a positive value", HttpStatus.BAD_REQUEST),
+    INVALID_LANGUAGE_ID(2011, "ID Language is invalid", HttpStatus.BAD_REQUEST),
+    FILM_LENGTH_INVALID(2012, "Film length must be a positive value", HttpStatus.BAD_REQUEST),
     ;
 
 

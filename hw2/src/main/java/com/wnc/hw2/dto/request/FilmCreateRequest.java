@@ -14,39 +14,38 @@ import java.math.BigDecimal;
 @Setter
 public class FilmCreateRequest {
     @NotBlank(message = "Film title is required")
-    @Size(min = 1, max = 255, message = "Film title must be between 1 and 255 characters")
+    @Size(min = 1, max = 255, message = "FILM_TITLE_INVALID")
     private String title;
 
-    @Size(max = 1000, message = "Description cannot be longer than 1000 characters")
+    @Size(max = 1000, message = "FILM_DESCRIPTION_TOO_LONG")
     private String description;
 
-    @Min(value = 1900, message = "Release year must not be before 1900")
-    @Max(value = 2100, message = "Release year must not be after 2100")
+    @Min(value = 1900, message = "FILM_RELEASE_YEAR_INVALID")
+    @Max(value = 2100, message = "FILM_RELEASE_YEAR_INVALID")
     private Integer releaseYear;
 
     @NotNull(message = "Language ID is required")
-    @Positive(message = "Language ID must be a positive number")
+    @Positive(message = "INVALID_LANGUAGE_ID")
     private Long languageId;
 
-    @Positive(message = "Original language ID must be a positive number")
+    @Positive(message = "INVALID_LANGUAGE_ID")
     private Long originalLanguageId;
 
     @NotNull(message = "Rental duration is required")
-    @Min(value = 1, message = "Rental duration must be at least 1 day")
-    @Max(value = 30, message = "Rental duration must not exceed 30 days")
+    @Min(value = 1, message = "FILM_RENTAL_DURATION_INVALID")
+    @Max(value = 30, message = "FILM_RENTAL_DURATION_INVALID")
     private Integer rentalDuration;
 
     @NotNull(message = "Rental rate is required")
-    @DecimalMin(value = "0.00", inclusive = false, message = "Rental rate must be greater than 0")
-    @Digits(integer = 4, fraction = 2, message = "Rental rate must have up to 4 digits and 2 decimal places")
+    @DecimalMin(value = "0.00", inclusive = false, message = "FILM_RENTAL_RATE_INVALID")
     private BigDecimal rentalRate;
 
-    @Positive(message = "Length must be a positive number")
+    @NotNull(message = "Length is required")
+    @Positive(message = "FILM_LENGTH_INVALID")
     private Integer length;
 
     @NotNull(message = "Replacement cost is required")
-    @DecimalMin(value = "0.00", inclusive = false, message = "Replacement cost must be greater than 0")
-    @Digits(integer = 5, fraction = 2, message = "Replacement cost must have up to 5 digits and 2 decimal places")
+    @DecimalMin(value = "0.00", inclusive = false, message = "FILM_REPLACEMENT_COST_INVALID")
     private BigDecimal replacementCost;
 
     @NotNull(message = "Rating is required")
