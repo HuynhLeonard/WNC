@@ -2,9 +2,17 @@ package com.wnc.hw2.dto.request;
 
 import com.wnc.hw2.model.Rating;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class FilmUpdateRequest {
     @Size(min = 1, max = 255, message = "FILM_TITLE_INVALID")
     private String title;

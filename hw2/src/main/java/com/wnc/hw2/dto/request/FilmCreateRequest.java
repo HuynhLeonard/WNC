@@ -6,6 +6,7 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -33,7 +34,6 @@ public class FilmCreateRequest {
 
     @NotNull(message = "Rental duration is required")
     @Min(value = 1, message = "FILM_RENTAL_DURATION_INVALID")
-    @Max(value = 30, message = "FILM_RENTAL_DURATION_INVALID")
     private Integer rentalDuration;
 
     @NotNull(message = "Rental rate is required")
@@ -51,5 +51,5 @@ public class FilmCreateRequest {
     @NotNull(message = "Rating is required")
     private Rating rating;
 
-    private String specialFeatures;
+    private Set<String> specialFeatures;
 }

@@ -3,10 +3,12 @@ package com.wnc.hw2.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.Internal;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -37,7 +39,7 @@ public class Film {
     private Language original_language_id;
 
     @Column(name = "rental_duration", nullable = false)
-    private Long rentalDuration;
+    private Integer rentalDuration;
 
     @Column(name = "rental_rate", nullable = false, precision = 4)
     private BigDecimal rental_rate;
