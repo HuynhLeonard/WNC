@@ -33,7 +33,6 @@ public class Film {
     @JoinColumn(name = "language_id", nullable = false)
     private Language language_id;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "original_language_id")
     private Language original_language_id;
