@@ -1,9 +1,6 @@
 package com.wnc.hw2.dto.request;
 
-import com.wnc.hw2.model.Rating;
-import com.wnc.hw2.validator.EnumPattern;
-import com.wnc.hw2.validator.ValidRating;
-import jakarta.validation.Valid;
+import com.wnc.hw2.validator.ValidSpecialFeatures;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
@@ -55,5 +52,6 @@ public class FilmCreateRequest {
     @Pattern(regexp = "G|NC-17|PG-13|R|PG",message = "FILM_RATING_INVALID")
     private String rating;
 
+    @ValidSpecialFeatures(message = "SPECIAL_FEATURE_INVALID")
     private Set<String> specialFeatures;
 }
