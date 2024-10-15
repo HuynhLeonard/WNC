@@ -11,6 +11,8 @@ import com.wnc.hw2.repository.LanguageRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -45,6 +47,9 @@ public class FilmService {
         newFilm.setReplacement_cost(film.getReplacementCost());
         newFilm.setRating(film.getRating());
         newFilm.setSpecial_features(film.getSpecialFeatures().toString());
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        newFilm.setLastUpdate(now.format(formatter));
 
         return filmRepository.save(newFilm);
     }
