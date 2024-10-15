@@ -1,6 +1,7 @@
 package com.wnc.hw2.dto.request;
 
 import com.wnc.hw2.model.Rating;
+import com.wnc.hw2.validator.EnumPattern;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
@@ -49,6 +50,7 @@ public class FilmCreateRequest {
     private BigDecimal replacementCost;
 
     @NotNull(message = "Rating is required")
+    @EnumPattern(name = "Rating", regexp = "GENERAL_AUDIENCES|PARENTAL_GUIDANCE_SUGGESTED")
     private Rating rating;
 
     private Set<String> specialFeatures;

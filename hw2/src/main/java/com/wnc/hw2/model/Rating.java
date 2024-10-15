@@ -18,4 +18,6 @@ public enum Rating {
     public String getCode() {
         return code;
     }
+
+
 }
