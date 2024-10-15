@@ -1,6 +1,7 @@
 package com.wnc.hw2.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,10 +37,12 @@ public class Film {
     @Column(name = "release_year")
     private Integer year;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "language_id", nullable = false)
     private Language language_id;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "original_language_id")
     private Language original_language_id;
@@ -65,4 +68,14 @@ public class Film {
 
     @Column(name = "last_update", nullable = false)
     private String lastUpdate;
+
+    @JsonProperty("language_id")
+    public Long getLanguageId() {
+        return language_id != null ? language_id.getId() : null;
+    }
+
+    @JsonProperty("original_language_id")
+    public Long getOriginalLanguageId() {
+        return original_language_id != null ? original_language_id.getId() : null;
+    }
 }
