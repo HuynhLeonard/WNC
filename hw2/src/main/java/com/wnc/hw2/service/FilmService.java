@@ -39,8 +39,10 @@ public class FilmService {
         newFilm.setDescription(film.getDescription());
         Language language = languageRepository.findById(film.getLanguageId()).orElseThrow(() -> new AppException(ErrorCode.INVALID_LANGUAGE_ID));
         newFilm.setLanguage_id(language);
-        Language originalLanguage = languageRepository.findById(film.getOriginalLanguageId()).orElse(null);
-        newFilm.setOriginal_language_id(originalLanguage);
+        if(film.getOriginalLanguageId() != null){
+            Language originalLanguage = languageRepository.findById(film.getOriginalLanguageId()).orElse(null);
+            newFilm.setOriginal_language_id(originalLanguage);
+        }
         newFilm.setRentalDuration(film.getRentalDuration());
         newFilm.setRental_rate(film.getRentalRate());
         newFilm.setLength(film.getLength());
