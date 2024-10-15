@@ -21,7 +21,7 @@ public enum ErrorCode {
     FILM_RELEASE_YEAR_INVALID(2004, "Film release year is invalid", HttpStatus.BAD_REQUEST),
     FILM_ALREADY_EXISTS(2005, "Film already exists", HttpStatus.BAD_REQUEST),
     FILM_RENTAL_DURATION_INVALID(2006, "Film rental duration must be between 1 and 30 days", HttpStatus.BAD_REQUEST),
-    FILM_RATING_INVALID(2007, "Film rating is invalid", HttpStatus.BAD_REQUEST),
+    FILM_RATING_INVALID(2007, "Film rating is invalid. Accepted value: G,NC-17,PG-13,R,PG", HttpStatus.BAD_REQUEST),
     FILM_SPECIAL_FEATURES_INVALID(2008, "Film special features are invalid", HttpStatus.BAD_REQUEST),
     FILM_RENTAL_RATE_INVALID(2009, "Film rental rate must be a positive value", HttpStatus.BAD_REQUEST),
     FILM_REPLACEMENT_COST_INVALID(2010, "Film replacement cost must be a positive value", HttpStatus.BAD_REQUEST),
