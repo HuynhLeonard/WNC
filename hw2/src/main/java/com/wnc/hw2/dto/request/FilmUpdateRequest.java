@@ -42,7 +42,7 @@ public class FilmUpdateRequest {
     @DecimalMin(value = "0.00", inclusive = false, message = "FILM_REPLACEMENT_COST_INVALID")
     private BigDecimal replacementCost;
     
-    private Rating rating;
+    private String rating;
 
     private String specialFeatures;
 }

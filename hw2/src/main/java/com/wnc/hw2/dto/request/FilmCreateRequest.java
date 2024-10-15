@@ -1,6 +1,6 @@
 package com.wnc.hw2.dto.request;
 
-import com.wnc.hw2.model.Rating;
+import com.wnc.hw2.validator.ValidSpecialFeatures;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
@@ -49,7 +49,9 @@ public class FilmCreateRequest {
     private BigDecimal replacementCost;
 
     @NotNull(message = "Rating is required")
-    private Rating rating;
+    @Pattern(regexp = "G|NC-17|PG-13|R|PG",message = "FILM_RATING_INVALID")
+    private String rating;
 
+    @ValidSpecialFeatures(message = "SPECIAL_FEATURE_INVALID")
     private Set<String> specialFeatures;
 }

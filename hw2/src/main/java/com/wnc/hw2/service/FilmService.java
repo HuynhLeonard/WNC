@@ -46,7 +46,9 @@ public class FilmService {
         newFilm.setLength(film.getLength());
         newFilm.setReplacement_cost(film.getReplacementCost());
         newFilm.setRating(film.getRating());
-        newFilm.setSpecial_features(film.getSpecialFeatures().toString());
+
+        // convert to string
+        newFilm.setSpecial_features(String.join(", ", film.getSpecialFeatures()));
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         newFilm.setLastUpdate(now.format(formatter));

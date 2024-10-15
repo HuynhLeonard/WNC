@@ -60,8 +60,8 @@ public class Film {
     private BigDecimal replacement_cost;
 
     @Column(name = "rating", length = 5)
-    @Convert(converter = RatingConverter.class)
-    private Rating rating;
+    //@Convert(converter = RatingConverter.class)
+    private String rating;
 
     @Column(name = "special_features", length = 54)
     private String special_features;
