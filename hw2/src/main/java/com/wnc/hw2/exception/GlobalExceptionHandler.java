@@ -1,5 +1,6 @@
 package com.wnc.hw2.exception;
 
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import com.wnc.hw2.dto.ApiResponse;
 import jakarta.validation.ConstraintViolation;
 import org.springframework.http.HttpStatus;
@@ -65,7 +66,6 @@ public class GlobalExceptionHandler {
 //
 //        return ResponseEntity.badRequest().body(apiResponse);
 //    }
-
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     ResponseEntity<List<ApiResponse<Object>>> handlingValidation2(MethodArgumentNotValidException ex) {
         List<ApiResponse<Object>> errors = new ArrayList<>();
@@ -86,8 +86,8 @@ public class GlobalExceptionHandler {
     }
 
     private String mapAttribute(String message, Map<String, Object> attributes) {
-        String minValue = String.valueOf(attributes.get(MIN_ATTRIBUTE));
+            String minValue = String.valueOf(attributes.get(MIN_ATTRIBUTE));
 
-        return message.replace("{" + MIN_ATTRIBUTE + "}", minValue);
+            return message.replace("{" + MIN_ATTRIBUTE + "}", minValue);
     }
 }

@@ -1,7 +1,6 @@
 package com.wnc.hw2.dto.request;
 
 import com.wnc.hw2.model.Rating;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.*;
 import lombok.*;
 

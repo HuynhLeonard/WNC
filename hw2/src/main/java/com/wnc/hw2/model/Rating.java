@@ -1,5 +1,7 @@
 package com.wnc.hw2.model;
 
+import com.fasterxml.jackson.annotation.*;
+
 public enum Rating {
     GENERAL_AUDIENCES("G"),
     PARENTAL_GUIDANCE_SUGGESTED("PG"),
