@@ -23,7 +23,7 @@ public class FilmService {
 
     // requirement 1: View all
     public List<Film> findAllFilm() {
-        return filmRepository.findAll();
+        return filmRepository.findFilmWithLanguage();
     }
 
     // requirement 2: View single film

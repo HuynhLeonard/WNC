@@ -69,13 +69,13 @@ public class Film {
     @Column(name = "last_update", nullable = false)
     private String lastUpdate;
 
-    @JsonProperty("language_id")
-    public Long getLanguageId() {
-        return language_id != null ? language_id.getId() : null;
+    @JsonProperty("language")
+    public String getLanguageNameBYId() {
+        return language_id != null ? language_id.getName() : null;
     }
 
-    @JsonProperty("original_language_id")
-    public Long getOriginalLanguageId() {
-        return original_language_id != null ? original_language_id.getId() : null;
+    @JsonProperty("original_language")
+    public String getOriginalLanguageId() {
+        return original_language_id != null ? original_language_id.getName() : null;
     }
 }
