@@ -37,6 +37,15 @@ public enum ErrorCode {
         this.statusCode = statusCode;
     }
 
+    public static ErrorCode getByFieldName(String fieldName) {
+        try {
+            return ErrorCode.valueOf(fieldName);
+        } catch (IllegalArgumentException e) {
+            // Handle invalid field name
+            throw new RuntimeException("ErrorCode not found for field name: " + fieldName);
+        }
+    }
+
     private final int code;
     private final String message;
     private final HttpStatusCode statusCode;

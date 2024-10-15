@@ -2,15 +2,14 @@ package com.wnc.hw2.exception;
 
 import com.wnc.hw2.dto.ApiResponse;
 import jakarta.validation.ConstraintViolation;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -68,19 +67,22 @@ public class GlobalExceptionHandler {
 //    }
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    ResponseEntity<ApiResponse> handlingValidation2(MethodArgumentNotValidException ex) {
-        Map<String, String> errors = new HashMap<>();
+    ResponseEntity<List<ApiResponse<Object>>> handlingValidation2(MethodArgumentNotValidException ex) {
+        List<ApiResponse<Object>> errors = new ArrayList<>();
 
         ex.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
-            errors.put(fieldName, errorMessage);
+            //System.out.println(errorMessage);
+
+            ErrorCode errorCode = ErrorCode.getByFieldName(errorMessage);
+            ApiResponse<Object> apiResponse = new ApiResponse<>();
+            apiResponse.setCode(errorCode.getCode());
+            apiResponse.setMessage(fieldName + ": " + errorCode.getMessage());
+            errors.add(apiResponse);
         });
 
-        ApiResponse<?> apiResponse = new ApiResponse<>();
-        apiResponse.setCode(404);
-        apiResponse.setMessage(errors.toString());
-        return ResponseEntity.badRequest().body(apiResponse);
+        return ResponseEntity.badRequest().body(errors);
     }
 
     private String mapAttribute(String message, Map<String, Object> attributes) {

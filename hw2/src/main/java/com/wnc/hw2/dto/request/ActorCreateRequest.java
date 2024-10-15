@@ -12,13 +12,11 @@ import lombok.*;
 @Setter
 @Getter
 public class ActorCreateRequest {
-    @NotNull(message = "First name is mandatory")
-    @NotBlank(message = "First name is mandatory")
+    @NotNull(message = "MISSING_FIELD")
     @Size(min = 1, max = 45, message = "FIRSTNAME_INVALID")
     private String first_name;
 
-    @NotNull(message = "Last name is mandatory")
-    @NotBlank(message = "Last name is mandatory")
+    @NotNull(message = "MISSING_FIELD")
     @Size(min = 1, max = 45, message = "LASTNAME_INVALID")
     private String last_name;
 }

@@ -2,7 +2,9 @@ package com.wnc.hw2.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.Internal;
 import org.hibernate.annotations.ColumnDefault;
@@ -17,6 +19,8 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "film")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,13 +36,11 @@ public class Film {
     @Column(name = "release_year")
     private Integer year;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "language_id", nullable = false)
     private Language language_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
     @JoinColumn(name = "original_language_id")
     private Language original_language_id;
 

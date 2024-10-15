@@ -30,14 +30,14 @@ public class Language {
     @Column(name = "last_update", nullable = false)
     private String lastUpdate;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "language_id")
-    @JsonManagedReference
-    @BatchSize(size = 10)
-    private List<Film> language;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "original_language_id")
-    @JsonManagedReference
-    @BatchSize(size = 10)
-    private Set<Film> originalLanguage;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "language_id")
+//    @JsonManagedReference
+//    @BatchSize(size = 10)
+//    private List<Film> language;
+//
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "original_language_id")
+//    @JsonManagedReference
+//    @BatchSize(size = 10)
+//    private Set<Film> originalLanguage;
 
 }

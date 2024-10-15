@@ -9,6 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class ActorUpdateRequest {
     @Size(min = 1, max = 45, message = "FIRSTNAME_INVALID")
     private String first_name;

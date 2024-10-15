@@ -13,8 +13,9 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class FilmCreateRequest {
-    @NotBlank(message = "Film title is required")
+    @NotNull(message = "MISSING_FIELD")
     @Size(min = 1, max = 255, message = "FILM_TITLE_INVALID")
     private String title;
 
