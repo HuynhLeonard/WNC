@@ -94,7 +94,7 @@ public class FilmController {
             })
     })
     @PatchMapping("/{id}")
-    ResponseEntity<ApiResponse<Film>> updateFilm(@PathVariable("id") Long id, @RequestBody FilmUpdateRequest film) {
+    ResponseEntity<ApiResponse<Film>> updateFilm(@PathVariable("id") Long id, @RequestBody @Valid FilmUpdateRequest film) {
         ApiResponse<Film> apiResponse = new ApiResponse<>();
         Film updatedFilm = filmService.updateFilm(film, id);
         apiResponse.setResult(updatedFilm);

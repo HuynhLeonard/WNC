@@ -16,15 +16,15 @@ import java.util.*;
 public class GlobalExceptionHandler {
     private static final String MIN_ATTRIBUTE = "min";
 
-//    @ExceptionHandler(value = Exception.class)
-//    ResponseEntity<ApiResponse> handlingRuntimeException(RuntimeException e){
-//        ApiResponse apiResponse = new ApiResponse();
-//
-//        apiResponse.setCode(404);
-//        apiResponse.setMessage(e.getMessage());
-//
-//        return ResponseEntity.badRequest().body(apiResponse);
-//    }
+    @ExceptionHandler(value = Exception.class)
+    ResponseEntity<ApiResponse> handlingRuntimeException(RuntimeException e){
+        ApiResponse apiResponse = new ApiResponse();
+
+        apiResponse.setCode(404);
+        apiResponse.setMessage(e.getMessage());
+
+        return ResponseEntity.badRequest().body(apiResponse);
+    }
 
     @ExceptionHandler(value = AppException.class)
     ResponseEntity<ApiResponse> handlingAppException(AppException exception) {

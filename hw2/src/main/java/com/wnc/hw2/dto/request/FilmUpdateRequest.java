@@ -1,10 +1,12 @@
 package com.wnc.hw2.dto.request;
 
 import com.wnc.hw2.model.Rating;
+import com.wnc.hw2.validator.ValidSpecialFeatures;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.Set;
 
 @Data
 @Getter
@@ -41,8 +43,10 @@ public class FilmUpdateRequest {
 
     @DecimalMin(value = "0.00", inclusive = false, message = "FILM_REPLACEMENT_COST_INVALID")
     private BigDecimal replacementCost;
-    
+
+    @Pattern(regexp = "G|NC-17|PG-13|R|PG",message = "FILM_RATING_INVALID")
     private String rating;
 
-    private String specialFeatures;
+    @ValidSpecialFeatures(message = "SPECIAL_FEATURE_INVALID")
+    private Set<String> specialFeatures;
 }
