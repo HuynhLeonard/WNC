@@ -1,7 +1,6 @@
-package com.wnc.hw2.dto.request;
+package com.wnc.hw3.dto.request;
 
-import com.wnc.hw2.model.Rating;
-import com.wnc.hw2.validator.ValidSpecialFeatures;
+import com.wnc.hw3.validator.ValidSpecialFeatures;
 import jakarta.validation.constraints.*;
 import lombok.*;
 

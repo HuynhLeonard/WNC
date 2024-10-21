@@ -1,21 +1,17 @@
-package com.wnc.hw2.service;
+package com.wnc.hw3.service;
 
-import com.wnc.hw2.dto.ActorDTO;
-import com.wnc.hw2.dto.request.ActorCreateRequest;
-import com.wnc.hw2.exception.AppException;
-import com.wnc.hw2.exception.ErrorCode;
-import com.wnc.hw2.model.Actor;
-import com.wnc.hw2.repository.ActorRepository;
-import jakarta.persistence.EntityNotFoundException;
+import com.wnc.hw3.dto.ActorDTO;
+import com.wnc.hw3.dto.request.ActorCreateRequest;
+import com.wnc.hw3.exception.AppException;
+import com.wnc.hw3.exception.ErrorCode;
+import com.wnc.hw3.model.Actor;
+import com.wnc.hw3.repository.ActorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

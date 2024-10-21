@@ -1,12 +1,10 @@
-package com.wnc.hw2.controller;
+package com.wnc.hw3.controller;
 
-import com.wnc.hw2.dto.ApiResponse;
-import com.wnc.hw2.dto.request.FilmCreateRequest;
-import com.wnc.hw2.dto.request.FilmUpdateRequest;
-import com.wnc.hw2.model.Actor;
-import com.wnc.hw2.model.Film;
-import com.wnc.hw2.repository.FilmRepository;
-import com.wnc.hw2.service.FilmService;
+import com.wnc.hw3.dto.ApiResponse;
+import com.wnc.hw3.dto.request.FilmCreateRequest;
+import com.wnc.hw3.dto.request.FilmUpdateRequest;
+import com.wnc.hw3.model.Film;
+import com.wnc.hw3.service.FilmService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -15,7 +13,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

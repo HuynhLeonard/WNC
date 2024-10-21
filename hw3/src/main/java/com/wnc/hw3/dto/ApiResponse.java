@@ -1,4 +1,4 @@
-package com.wnc.hw2.dto;
+package com.wnc.hw3.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

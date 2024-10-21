@@ -1,4 +1,4 @@
-package com.wnc.hw2.exception;
+package com.wnc.hw3.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

@@ -1,13 +1,13 @@
-package com.wnc.hw2;
+package com.wnc.hw3;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Hw2Application {
+public class Hw3Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Hw2Application.class, args);
+		SpringApplication.run(Hw3Application.class, args);
 	}
 
 }

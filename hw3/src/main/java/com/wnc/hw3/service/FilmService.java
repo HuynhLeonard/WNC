@@ -1,13 +1,13 @@
-package com.wnc.hw2.service;
+package com.wnc.hw3.service;
 
-import com.wnc.hw2.dto.request.FilmCreateRequest;
-import com.wnc.hw2.dto.request.FilmUpdateRequest;
-import com.wnc.hw2.exception.AppException;
-import com.wnc.hw2.exception.ErrorCode;
-import com.wnc.hw2.model.Film;
-import com.wnc.hw2.model.Language;
-import com.wnc.hw2.repository.FilmRepository;
-import com.wnc.hw2.repository.LanguageRepository;
+import com.wnc.hw3.dto.request.FilmCreateRequest;
+import com.wnc.hw3.dto.request.FilmUpdateRequest;
+import com.wnc.hw3.exception.AppException;
+import com.wnc.hw3.exception.ErrorCode;
+import com.wnc.hw3.model.Film;
+import com.wnc.hw3.model.Language;
+import com.wnc.hw3.repository.FilmRepository;
+import com.wnc.hw3.repository.LanguageRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

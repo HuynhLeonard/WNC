@@ -1,4 +1,4 @@
-package com.wnc.hw2.validator;
+package com.wnc.hw3.validator;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

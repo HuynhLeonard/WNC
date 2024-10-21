@@ -1,6 +1,6 @@
-package com.wnc.hw2.config;
+package com.wnc.hw3.config;
 
-import com.wnc.hw2.constant.OpenApiConstant;
+import com.wnc.hw3.constant.OpenApiConstant;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.servers.Server;
 import io.swagger.v3.oas.models.OpenAPI;

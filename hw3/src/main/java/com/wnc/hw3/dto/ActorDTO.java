@@ -1,4 +1,4 @@
-package com.wnc.hw2.dto;
+package com.wnc.hw3.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

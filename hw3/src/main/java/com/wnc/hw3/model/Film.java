@@ -1,4 +1,4 @@
-package com.wnc.hw2.model;
+package com.wnc.hw3.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,14 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.Internal;
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import java.math.BigDecimal;
-import java.time.Instant;
-import java.util.Set;
 
 @Getter
 @Setter

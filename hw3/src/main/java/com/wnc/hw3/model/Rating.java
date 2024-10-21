@@ -1,4 +1,4 @@
-package com.wnc.hw2.model;
+package com.wnc.hw3.model;
 
 import com.fasterxml.jackson.annotation.*;
 

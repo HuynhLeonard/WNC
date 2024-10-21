@@ -1,4 +1,4 @@
-package com.wnc.hw2.exception;
+package com.wnc.hw3.exception;
 
 public class AppException extends RuntimeException {
 

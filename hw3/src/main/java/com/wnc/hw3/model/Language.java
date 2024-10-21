@@ -1,17 +1,11 @@
-package com.wnc.hw2.model;
+package com.wnc.hw3.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
-import java.time.Instant;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 

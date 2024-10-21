@@ -1,4 +1,4 @@
-package com.wnc.hw2.constant;
+package com.wnc.hw3.constant;
 
 public class OpenApiConstant {
     public static final String DEV_SERVER_URL = "http://localhost:8080";

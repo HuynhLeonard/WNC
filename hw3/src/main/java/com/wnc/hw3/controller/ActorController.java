@@ -1,11 +1,10 @@
-package com.wnc.hw2.controller;
+package com.wnc.hw3.controller;
 
-import com.wnc.hw2.dto.ActorDTO;
-import com.wnc.hw2.dto.ApiResponse;
-import com.wnc.hw2.dto.request.ActorCreateRequest;
-import com.wnc.hw2.exception.ErrorCode;
-import com.wnc.hw2.model.Actor;
-import com.wnc.hw2.service.ActorService;
+import com.wnc.hw3.dto.ActorDTO;
+import com.wnc.hw3.dto.ApiResponse;
+import com.wnc.hw3.dto.request.ActorCreateRequest;
+import com.wnc.hw3.model.Actor;
+import com.wnc.hw3.service.ActorService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -15,11 +14,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
