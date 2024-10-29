@@ -7,6 +7,7 @@ import com.wnc.hw3.exception.ErrorCode;
 import com.wnc.hw3.model.Actor;
 import com.wnc.hw3.repository.ActorRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
