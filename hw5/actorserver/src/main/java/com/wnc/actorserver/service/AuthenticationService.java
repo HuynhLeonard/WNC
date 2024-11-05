@@ -78,6 +78,7 @@ public class AuthenticationService {
 
         var token = generateToken(user, false);
         var refreshToken = generateToken(user, true);
+        System.out.println(refreshToken);
 
         RefreshToken refreshTokenRecord = RefreshToken.builder().token(refreshToken).expiryTime(new Date(
                 Instant.now().plus(REFRESHABLE_DURATION, ChronoUnit.SECONDS).toEpochMilli())).build();

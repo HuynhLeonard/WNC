@@ -1,10 +1,15 @@
 package com.wnc.filmserver.config;
 
+import com.wnc.filmserver.dto.ApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 
 @Component
 public class ApiKeyInterceptor implements HandlerInterceptor {
@@ -16,14 +21,27 @@ public class ApiKeyInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String requestApiKey = request.getHeader("X-API-KEY");
-        String requestApiSecret = request.getHeader("X-API-SECRET");
+        String token = request.getHeader("toke");
+        String time = request.getHeader("time");
+        System.out.println("Token gui: " + token);
+        String secretToken = generateToken("api/film" + time + apiSecret);
+        System.out.println("Secret token: " + secretToken);
 
-        if (apiKey.equals(requestApiKey) && apiSecret.equals(requestApiSecret)) {
-            return true; // Cho phép tiếp tục xử lý yêu cầu
+        if (token.equals(secretToken)) {
+            return true;
         }
-
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        return false; // Yêu cầu không hợp lệ
+        return false;
     }
+
+    public String generateToken(String data) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashBytes = md.digest(data.getBytes());
+            return Base64.getEncoder().encodeToString(hashBytes);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

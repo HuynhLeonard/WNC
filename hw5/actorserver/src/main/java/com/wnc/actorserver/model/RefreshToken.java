@@ -2,10 +2,7 @@ package com.wnc.actorserver.model;
 
 import java.util.Date;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import lombok.*;
         import lombok.experimental.FieldDefaults;
@@ -21,6 +18,7 @@ public class RefreshToken {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     String id;
+    @Column(name="token", length = 512)
     String token;
     Date expiryTime;
 }
