@@ -1,6 +1,8 @@
 package com.wnc.actorserver.client;
 
 import com.wnc.actorserver.dto.ApiResponse;
+import com.wnc.actorserver.exception.AppException;
+import com.wnc.actorserver.exception.ErrorCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -41,12 +43,15 @@ public class FilmClient {
         headers.set("time", time);
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
+        try {
+            ResponseEntity<ApiResponse> response = restTemplate.exchange(filmUrl, HttpMethod.GET, entity, new ParameterizedTypeReference<>() {
+                    }
+            );
+            return response.getBody();
+        } catch (Exception e) {
+            throw new AppException(ErrorCode.UNAUTHENTICATED);
+        }
 
-        ResponseEntity<ApiResponse> response = restTemplate.exchange(filmUrl, HttpMethod.GET, entity, new ParameterizedTypeReference<>() {
-                }
-        );
-
-        return response.getBody();
     }
 
     public String generateToken(String data) {

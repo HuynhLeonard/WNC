@@ -1,6 +1,8 @@
 package com.wnc.filmserver.config;
 
 import com.wnc.filmserver.dto.ApiResponse;
+import com.wnc.filmserver.exception.AppException;
+import com.wnc.filmserver.exception.ErrorCode;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,7 +23,8 @@ public class ApiKeyInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String token = request.getHeader("toke");
+
+        String token = request.getHeader("token");
         String time = request.getHeader("time");
         System.out.println("Token gui: " + token);
         String secretToken = generateToken("api/film" + time + apiSecret);
