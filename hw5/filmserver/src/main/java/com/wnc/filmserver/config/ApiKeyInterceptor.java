@@ -26,8 +26,8 @@ public class ApiKeyInterceptor implements HandlerInterceptor {
 
         String token = request.getHeader("token");
         String time = request.getHeader("time");
-
-        String secretToken = generateToken("api/film" + time + apiSecret);
+        String requestUrl = request.getRequestURL().toString();
+        String secretToken = generateToken(requestUrl + time + apiSecret);
 
         if (token.equals(secretToken)) {
             return true;

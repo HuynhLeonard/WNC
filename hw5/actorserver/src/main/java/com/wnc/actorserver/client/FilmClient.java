@@ -38,7 +38,7 @@ public class FilmClient {
         HttpHeaders headers = new HttpHeaders();
 
         String time = LocalDateTime.now().toString();
-        String secretToken = generateToken("api/film" + time + apiSecret);
+        String secretToken = generateToken(filmUrl + time + apiSecret);
 
         headers.set("token", secretToken);
         headers.set("time", time);
