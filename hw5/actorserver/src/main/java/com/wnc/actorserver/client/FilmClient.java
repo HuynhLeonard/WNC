@@ -1,5 +1,6 @@
 package com.wnc.actorserver.client;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wnc.actorserver.dto.ApiResponse;
 import com.wnc.actorserver.exception.AppException;
 import com.wnc.actorserver.exception.ErrorCode;
@@ -14,6 +15,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.security.MessageDigest;
@@ -23,6 +25,7 @@ import java.util.Base64;
 
 @Service
 public class FilmClient {
+    private final ObjectMapper jacksonObjectMapper;
     private RestTemplate restTemplate;
     private final String filmUrl = "http://localhost:8081/film";
 
@@ -30,12 +33,16 @@ public class FilmClient {
     private String apiSecret;
 
     @Autowired
-    public FilmClient(RestTemplateBuilder restTemplateBuilder) {
+    public FilmClient(RestTemplateBuilder restTemplateBuilder, ObjectMapper jacksonObjectMapper) {
         this.restTemplate = restTemplateBuilder.build();
+        this.jacksonObjectMapper = jacksonObjectMapper;
     }
 
     public ApiResponse getAllFilms(HttpServletRequest request) throws AppException {
         HttpHeaders headers = new HttpHeaders();
+
+        // test LocalDatetime
+        //String time = LocalDateTime.of(2024,11,5,10,10,0).toString();
 
         String time = LocalDateTime.now().toString();
         String secretToken = generateToken(filmUrl + time + apiSecret);
@@ -49,10 +56,15 @@ public class FilmClient {
                     }
             );
             return response.getBody();
-        } catch (Exception e) {
-            throw new AppException(ErrorCode.UNAUTHENTICATED);
+        } catch (HttpClientErrorException e) {
+            try {
+                String body = e.getResponseBodyAsString();
+                System.out.println(body);
+                return jacksonObjectMapper.readValue(body, ApiResponse.class);
+            } catch (Exception parseException) {
+                throw new AppException(ErrorCode.ACTOR_EXISTED);
+            }
         }
-
     }
 
     public String generateToken(String data) {

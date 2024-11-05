@@ -6,6 +6,10 @@ import org.springframework.http.HttpStatusCode;
 
 @Getter
 public enum ErrorCode {
+    INVALID_TOKEN(9001, "Invalid token", HttpStatus.BAD_REQUEST),
+    INVALID_TIME(9002, "Request time expired", HttpStatus.BAD_REQUEST),
+    UNAUTHORIZED(9003, "Unauthorized", HttpStatus.UNAUTHORIZED),
+
     //UNCATEGORIZED_EXCEPTION(9999, "Uncategorized error", HttpStatus.INTERNAL_SERVER_ERROR),
     INVALID_KEY(1001, "Uncategorized error", HttpStatus.BAD_REQUEST),
     MISSING_FIELD(1006, "Missing fields", HttpStatus.BAD_REQUEST),
