@@ -3,6 +3,7 @@ package com.wnc.actorserver.controller;
 import com.wnc.actorserver.client.FilmClient;
 import com.wnc.actorserver.dto.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.AllArgsConstructor;
 import lombok.experimental.NonFinal;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,8 +25,8 @@ public class FilmController {
     private final FilmClient filmClient;
 
     @GetMapping("")
-    ResponseEntity<ApiResponse<?>> getAllFilm() {
-        ApiResponse<Object> response = filmClient.getAllFilms();
+    ResponseEntity<ApiResponse<?>> getAllFilm(HttpServletRequest request) {
+        ApiResponse<Object> response = filmClient.getAllFilms(request);
         return ResponseEntity.ok(response);
     }
 

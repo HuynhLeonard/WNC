@@ -3,6 +3,7 @@ package com.wnc.actorserver.client;
 import com.wnc.actorserver.dto.ApiResponse;
 import com.wnc.actorserver.exception.AppException;
 import com.wnc.actorserver.exception.ErrorCode;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -33,7 +34,7 @@ public class FilmClient {
         this.restTemplate = restTemplateBuilder.build();
     }
 
-    public ApiResponse getAllFilms() {
+    public ApiResponse getAllFilms(HttpServletRequest request) throws AppException {
         HttpHeaders headers = new HttpHeaders();
 
         String time = LocalDateTime.now().toString();
