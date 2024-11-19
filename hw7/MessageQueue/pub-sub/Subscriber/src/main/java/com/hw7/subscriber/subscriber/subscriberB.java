@@ -1,8 +1,8 @@
-package com.hw7.publisher.subscriber;
+package com.hw7.subscriber.subscriber;
 
 
-import com.hw7.publisher.config.MessageConfig;
-import com.hw7.publisher.model.Message;
+import com.hw7.subscriber.config.MessageConfig;
+import com.hw7.subscriber.model.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
