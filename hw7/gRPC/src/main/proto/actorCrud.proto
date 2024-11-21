@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_package = "com.wnc.gRPC";
+option java_outer_classname = "ActorCrud";
+
+service ActorCrudService {
+  rpc ReadAll (Empty) returns (ActorList);
+  rpc ReadActorById (ActorID) returns (Actor);
+  rpc UpdateActor (ActorUpdateRequest) returns (Actor);
+}
+
+message Actor {
+  int32 id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string lastUpdate = 4;
+}
+
+message ActorID {
+  int32 ActorID = 1;
+}
+
+message ActorList {
+  repeated Actor actor = 1;
+}
+
+message ActorUpdateRequest {
+  int32 ActorID = 1;
+  string firstName = 2;
+  string lastName = 3;
+}
+
+message Empty {}
