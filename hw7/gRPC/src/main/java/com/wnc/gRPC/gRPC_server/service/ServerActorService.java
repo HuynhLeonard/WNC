@@ -1,9 +1,9 @@
-package com.wnc.gRPC.service;
+package com.wnc.gRPC.gRPC_server.service;
 
 import com.wnc.gRPC.ActorCrud;
 import com.wnc.gRPC.ActorCrudServiceGrpc;
-import com.wnc.gRPC.entity.Actor;
-import com.wnc.gRPC.repository.ActorRepository;
+import com.wnc.gRPC.gRPC_server.entity.Actor;
+import com.wnc.gRPC.gRPC_server.repository.ActorRepository;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @GrpcService
-public class actorService extends ActorCrudServiceGrpc.ActorCrudServiceImplBase {
+public class ServerActorService extends ActorCrudServiceGrpc.ActorCrudServiceImplBase {
     @Autowired
     private ActorRepository actorRepository;
 
@@ -78,7 +78,8 @@ public class actorService extends ActorCrudServiceGrpc.ActorCrudServiceImplBase 
             existingActor.setLastName(request.getLastName());
         }
 
-        existingActor.setLastUpdate(LocalDateTime.now());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd' 'HH:mm:ss");
+        existingActor.setLastUpdate(LocalDateTime.now().format(formatter));
 
         Actor updatedActor = actorRepository.save(existingActor);
         ActorCrud.Actor response = ActorCrud.Actor.newBuilder()
