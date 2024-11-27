@@ -1,9 +1,11 @@
-package com.wnc.gRPC.entity;
+package com.wnc.gRPC.gRPC_server.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -11,6 +13,8 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "actor")
 public class Actor {
@@ -30,8 +34,7 @@ public class Actor {
     private String lastName;
 
     @NotNull
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     @Column(name = "last_update", nullable = false)
-    private LocalDateTime lastUpdate;
+    private String lastUpdate;
 
 }
