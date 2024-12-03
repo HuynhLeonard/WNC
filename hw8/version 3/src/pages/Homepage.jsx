@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import AddTask from "../components/AddTask";
 import FilterTask from "../components/FilterTask";
@@ -11,6 +13,7 @@ import { getTasks } from "../api/todo";
 import { logout } from "../api/auth";
 
 export default function Homepage() {
+  const navigate = useNavigate();
   const { dispatch } = useTaskContext();
 
   useEffect(() => {
@@ -28,6 +31,8 @@ export default function Homepage() {
   async function handleLogout() {
     await logout();
     localStorage.clear();
+    toast.info("Logout successfully!");
+    navigate("/login");
   }
 
   return (

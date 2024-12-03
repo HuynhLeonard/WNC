@@ -5,6 +5,9 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { TaskProvider } from "./TaskProvider.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import Loginpage from "./pages/Loginpage.jsx";
@@ -27,7 +30,20 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <TaskProvider>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <RouterProvider router={router} />
+      <ToastContainer />
     </TaskProvider>
   </StrictMode>
 );

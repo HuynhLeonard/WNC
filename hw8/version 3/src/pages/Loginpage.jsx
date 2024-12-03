@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { login } from "../api/auth";
 
@@ -10,18 +10,16 @@ import LoadingAnimation from "../components/LoadingAnimation";
 export default function Loginpage() {
   const { dispatch } = useTaskContext();
   const { register, handleSubmit } = useForm();
-  const navigate = useNavigate();
 
   const handleLogin = async (data) => {
     try {
       dispatch({ type: "SET_LOADING", payload: true });
       await login(data.username, data.password);
       dispatch({ type: "SET_LOADING", payload: false });
-      navigate("/");
+      window.location.href = "/";
     } catch (error) {
       dispatch({ type: "SET_LOADING", payload: false });
-
-      console.log(error);
+      toast.error(error.response.data.message);
     }
   };
 
