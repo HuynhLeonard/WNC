@@ -1,11 +1,17 @@
+import { useForm } from "react-hook-form";
+
 export default function Loginpage() {
+  const { register, handleSubmit } = useForm();
+
+  const handleLogin = (data) => console.log(data); // call login api
+
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="w-full max-w-sm p-6 bg-white rounded shadow-md border">
         <h1 className="text-2xl font-semibold text-center text-gray-700">
           Login
         </h1>
-        <form className="mt-6">
+        <form className="mt-6" onSubmit={handleSubmit(handleLogin)}>
           <div className="mb-4">
             <label
               htmlFor="username"
@@ -16,7 +22,7 @@ export default function Loginpage() {
             <input
               type="text"
               id="username"
-              name="username"
+              {...register("username", { required: true })}
               className="w-full px-4 py-2 mt-2 text-gray-700 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
             />
           </div>
@@ -30,7 +36,7 @@ export default function Loginpage() {
             <input
               type="password"
               id="password"
-              name="password"
+              {...register("password", { required: true })}
               className="w-full px-4 py-2 mt-2 text-gray-700 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
             />
           </div>

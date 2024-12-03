@@ -1,7 +1,24 @@
+import { addTask, getTasks } from "../api/todo.js";
 import { useTaskContext } from "../useTaskContext";
 
 export default function AddTask() {
   const { state, dispatch } = useTaskContext();
+
+  async function handleAddTask() {
+    dispatch({ type: "SET_LOADING", payload: true });
+
+    const newTask = {
+      todoItem: state.taskName,
+      completed: false,
+    };
+
+    await addTask(newTask);
+
+    const taskList = await getTasks();
+    dispatch({ type: "SET_TASK_LIST", payload: taskList });
+
+    dispatch({ type: "SET_LOADING", payload: false });
+  }
 
   return (
     <div className="flex mt-10 overflow-hidden rounded-md">
@@ -14,7 +31,7 @@ export default function AddTask() {
         className="w-[600px] bg-gray-100 outline-none border-none py-2 px-3"
       />
       <button
-        onClick={() => dispatch({ type: "ADD_TASK" })}
+        onClick={() => handleAddTask()}
         className="w-40 p-2 font-medium text-white bg-sky-500 hover:bg-sky-400"
       >
         Add
