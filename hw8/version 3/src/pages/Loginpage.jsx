@@ -1,9 +1,29 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+import { login } from "../api/auth";
+
+import { useTaskContext } from "../useTaskContext";
+
+import LoadingAnimation from "../components/LoadingAnimation";
 
 export default function Loginpage() {
+  const { dispatch } = useTaskContext();
   const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
-  const handleLogin = (data) => console.log(data); // call login api
+  const handleLogin = async (data) => {
+    try {
+      dispatch({ type: "SET_LOADING", payload: true });
+      await login(data.username, data.password);
+      dispatch({ type: "SET_LOADING", payload: false });
+      navigate("/");
+    } catch (error) {
+      dispatch({ type: "SET_LOADING", payload: false });
+
+      console.log(error);
+    }
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen">
@@ -48,6 +68,8 @@ export default function Loginpage() {
           </button>
         </form>
       </div>
+
+      <LoadingAnimation />
     </div>
   );
 }
