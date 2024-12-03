@@ -1,0 +1,1035 @@
+Index: hw3/logs/application.log
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>2024-10-29 21:39:38 - Closing JPA EntityManagerFactory for persistence unit 'default'\r\n2024-10-29 21:39:38 - HikariPool-1 - Shutdown initiated...\r\n2024-10-29 21:39:38 - HikariPool-1 - Shutdown completed.\r\n
+===================================================================
+diff --git a/hw3/logs/application.log b/hw3/logs/application.log
+--- a/hw3/logs/application.log	
++++ b/hw3/logs/application.log	
+@@ -1,3 +1,1023 @@
+-2024-10-29 21:39:38 - Closing JPA EntityManagerFactory for persistence unit 'default'
+-2024-10-29 21:39:38 - HikariPool-1 - Shutdown initiated...
+-2024-10-29 21:39:38 - HikariPool-1 - Shutdown completed.
++2024-10-22 15:11:42 - HV000001: Hibernate Validator 8.0.1.Final
++2024-10-22 15:11:42 - Starting Hw3Application using Java 22 with PID 9689 (/Users/aaa/SampleCode/WNC/hw3/target/classes started by aaa in /Users/aaa/SampleCode/WNC/hw3)
++2024-10-22 15:11:42 - No active profile set, falling back to 1 default profile: "default"
++2024-10-22 15:11:42 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
++2024-10-22 15:11:42 - Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
++2024-10-22 15:11:43 - Tomcat initialized with port 8080 (http)
++2024-10-22 15:11:43 - Initializing ProtocolHandler ["http-nio-8080"]
++2024-10-22 15:11:43 - Starting service [Tomcat]
++2024-10-22 15:11:43 - Starting Servlet engine: [Apache Tomcat/10.1.30]
++2024-10-22 15:11:43 - Initializing Spring embedded WebApplicationContext
++2024-10-22 15:11:43 - Root WebApplicationContext: initialization completed in 631 ms
++2024-10-22 15:11:43 - HHH000204: Processing PersistenceUnitInfo [name: default]
++2024-10-22 15:11:43 - HHH000412: Hibernate ORM core version 6.5.3.Final
++2024-10-22 15:11:43 - HHH000026: Second-level cache disabled
++2024-10-22 15:11:43 - No LoadTimeWeaver setup: ignoring JPA class transformer
++2024-10-22 15:11:43 - HikariPool-1 - Starting...
++2024-10-22 15:11:43 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c5cd2ea
++2024-10-22 15:11:43 - HikariPool-1 - Start completed.
++2024-10-22 15:11:43 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
++2024-10-22 15:11:44 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
++2024-10-22 15:11:44 - Initialized JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 15:11:44 - Hibernate is in classpath; If applicable, HQL parser will be used.
++2024-10-22 15:11:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
++2024-10-22 15:11:44 - Starting ProtocolHandler ["http-nio-8080"]
++2024-10-22 15:11:44 - Tomcat started on port 8080 (http) with context path '/'
++2024-10-22 15:11:44 - Started Hw3Application in 2.61 seconds (process running for 2.929)
++2024-10-22 15:11:54 - Initializing Spring DispatcherServlet 'dispatcherServlet'
++2024-10-22 15:11:54 - Initializing Servlet 'dispatcherServlet'
++2024-10-22 15:11:54 - Completed initialization in 1 ms
++2024-10-22 15:11:54 - Request: GET /actor/1000 with parameters [1000]
++2024-10-22 15:11:54 - Request: GET /actor/1000 with parameters [1000]
++2024-10-22 15:11:54 - Exception in method: getSingleActor - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.service.ActorService$$SpringCGLIB$$0.getSingleActor(<generated>)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 15:11:54 - Exception in method: getActorById - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.service.ActorService$$SpringCGLIB$$0.getSingleActor(<generated>)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 15:11:54 - Request: GET /actor/1000 with parameters [com.wnc.hw3.exception.AppException: Actor not existed]
++2024-10-22 15:11:54 - Method result: <404 NOT_FOUND Not Found,ApiResponse(code=1005, message=Actor not existed, result=null),[]>
++2024-10-22 15:11:59 - Request: GET /actor/2 with parameters [2]
++2024-10-22 15:11:59 - Request: GET /actor/2 with parameters [2]
++2024-10-22 15:11:59 - Method result: Actor{first_name='NICK', last_name='WAHLBERG'}
++2024-10-22 15:11:59 - Method result: <200 OK OK,ApiResponse(code=1000, message=null, result=Actor{first_name='NICK', last_name='WAHLBERG'}),[]>
++2024-10-22 15:30:06 - Closing JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 15:30:06 - HikariPool-1 - Shutdown initiated...
++2024-10-22 15:30:06 - HikariPool-1 - Shutdown completed.
++2024-10-22 21:13:56 - HV000001: Hibernate Validator 8.0.1.Final
++2024-10-22 21:13:56 - Starting Hw3Application using Java 22 with PID 13330 (/Users/aaa/SampleCode/WNC/hw3/target/classes started by aaa in /Users/aaa/SampleCode/WNC/hw3)
++2024-10-22 21:13:56 - No active profile set, falling back to 1 default profile: "default"
++2024-10-22 21:13:57 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
++2024-10-22 21:13:57 - Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
++2024-10-22 21:13:57 - Tomcat initialized with port 8080 (http)
++2024-10-22 21:13:57 - Initializing ProtocolHandler ["http-nio-8080"]
++2024-10-22 21:13:57 - Starting service [Tomcat]
++2024-10-22 21:13:57 - Starting Servlet engine: [Apache Tomcat/10.1.30]
++2024-10-22 21:13:57 - Initializing Spring embedded WebApplicationContext
++2024-10-22 21:13:57 - Root WebApplicationContext: initialization completed in 702 ms
++2024-10-22 21:13:57 - HHH000204: Processing PersistenceUnitInfo [name: default]
++2024-10-22 21:13:57 - HHH000412: Hibernate ORM core version 6.5.3.Final
++2024-10-22 21:13:57 - HHH000026: Second-level cache disabled
++2024-10-22 21:13:57 - No LoadTimeWeaver setup: ignoring JPA class transformer
++2024-10-22 21:13:57 - HikariPool-1 - Starting...
++2024-10-22 21:13:57 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f7fcec2
++2024-10-22 21:13:57 - HikariPool-1 - Start completed.
++2024-10-22 21:13:57 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
++2024-10-22 21:13:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
++2024-10-22 21:13:58 - Initialized JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 21:13:58 - Hibernate is in classpath; If applicable, HQL parser will be used.
++2024-10-22 21:13:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
++2024-10-22 21:13:59 - Starting ProtocolHandler ["http-nio-8080"]
++2024-10-22 21:13:59 - Tomcat started on port 8080 (http) with context path '/'
++2024-10-22 21:13:59 - Started Hw3Application in 2.816 seconds (process running for 3.148)
++2024-10-22 21:14:14 - Initializing Spring DispatcherServlet 'dispatcherServlet'
++2024-10-22 21:14:14 - Initializing Servlet 'dispatcherServlet'
++2024-10-22 21:14:14 - Completed initialization in 1 ms
++2024-10-22 21:14:14 - Request: GET /actor/2 with parameters [2]
++2024-10-22 21:14:14 - Request: GET /actor/2 with parameters [2]
++2024-10-22 21:14:14 - Method result: Actor{first_name='NICK', last_name='WAHLBERG'}
++2024-10-22 21:14:14 - Method result: <200 OK OK,ApiResponse(code=1000, message=null, result=Actor{first_name='NICK', last_name='WAHLBERG'}),[]>
++2024-10-22 21:14:45 - Request: GET /actor/1000 with parameters [1000]
++2024-10-22 21:14:45 - Request: GET /actor/1000 with parameters [1000]
++2024-10-22 21:14:45 - Exception in method: getSingleActor - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.service.ActorService$$SpringCGLIB$$0.getSingleActor(<generated>)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 21:14:45 - Exception in method: getActorById - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.service.ActorService$$SpringCGLIB$$0.getSingleActor(<generated>)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 21:14:45 - Request: GET /actor/1000 with parameters [com.wnc.hw3.exception.AppException: Actor not existed]
++2024-10-22 21:14:45 - Method result: <404 NOT_FOUND Not Found,ApiResponse(code=1005, message=Actor not existed, result=null),[]>
++2024-10-22 21:15:13 - Closing JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 21:15:13 - HikariPool-1 - Shutdown initiated...
++2024-10-22 21:15:13 - HikariPool-1 - Shutdown completed.
++2024-10-22 21:15:15 - HV000001: Hibernate Validator 8.0.1.Final
++2024-10-22 21:15:15 - Starting Hw3Application using Java 22 with PID 13390 (/Users/aaa/SampleCode/WNC/hw3/target/classes started by aaa in /Users/aaa/SampleCode/WNC/hw3)
++2024-10-22 21:15:15 - No active profile set, falling back to 1 default profile: "default"
++2024-10-22 21:15:16 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
++2024-10-22 21:15:16 - Finished Spring Data repository scanning in 25 ms. Found 3 JPA repository interfaces.
++2024-10-22 21:15:16 - Tomcat initialized with port 8080 (http)
++2024-10-22 21:15:16 - Initializing ProtocolHandler ["http-nio-8080"]
++2024-10-22 21:15:16 - Starting service [Tomcat]
++2024-10-22 21:15:16 - Starting Servlet engine: [Apache Tomcat/10.1.30]
++2024-10-22 21:15:16 - Initializing Spring embedded WebApplicationContext
++2024-10-22 21:15:16 - Root WebApplicationContext: initialization completed in 712 ms
++2024-10-22 21:15:16 - HHH000204: Processing PersistenceUnitInfo [name: default]
++2024-10-22 21:15:16 - HHH000412: Hibernate ORM core version 6.5.3.Final
++2024-10-22 21:15:16 - HHH000026: Second-level cache disabled
++2024-10-22 21:15:16 - No LoadTimeWeaver setup: ignoring JPA class transformer
++2024-10-22 21:15:16 - HikariPool-1 - Starting...
++2024-10-22 21:15:16 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b548f51
++2024-10-22 21:15:16 - HikariPool-1 - Start completed.
++2024-10-22 21:15:17 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
++2024-10-22 21:15:17 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
++2024-10-22 21:15:17 - Initialized JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 21:15:17 - Hibernate is in classpath; If applicable, HQL parser will be used.
++2024-10-22 21:15:17 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
++2024-10-22 21:15:18 - Starting ProtocolHandler ["http-nio-8080"]
++2024-10-22 21:15:18 - Tomcat started on port 8080 (http) with context path '/'
++2024-10-22 21:15:18 - Started Hw3Application in 2.685 seconds (process running for 3.024)
++2024-10-22 21:15:21 - Initializing Spring DispatcherServlet 'dispatcherServlet'
++2024-10-22 21:15:21 - Initializing Servlet 'dispatcherServlet'
++2024-10-22 21:15:21 - Completed initialization in 1 ms
++2024-10-22 21:15:21 - Request: GET /actor/1000 with parameters [1000]
++2024-10-22 21:15:21 - Exception in method: getActorById - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 21:15:21 - Request: GET /actor/1000 with parameters [com.wnc.hw3.exception.AppException: Actor not existed]
++2024-10-22 21:15:21 - Method result: <404 NOT_FOUND Not Found,ApiResponse(code=1005, message=Actor not existed, result=null),[]>
++2024-10-22 21:15:38 - Request: GET /actor/1 with parameters [1]
++2024-10-22 21:15:38 - Method result: <200 OK OK,ApiResponse(code=1000, message=null, result=Actor{first_name='PENELOPE', last_name='GUINESS'}),[]>
++2024-10-22 21:16:30 - Closing JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 21:16:30 - HikariPool-1 - Shutdown initiated...
++2024-10-22 21:16:30 - HikariPool-1 - Shutdown completed.
++2024-10-22 21:16:34 - HV000001: Hibernate Validator 8.0.1.Final
++2024-10-22 21:16:34 - Starting Hw3Application using Java 22 with PID 13416 (/Users/aaa/SampleCode/WNC/hw3/target/classes started by aaa in /Users/aaa/SampleCode/WNC/hw3)
++2024-10-22 21:16:34 - No active profile set, falling back to 1 default profile: "default"
++2024-10-22 21:16:34 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
++2024-10-22 21:16:34 - Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
++2024-10-22 21:16:35 - Tomcat initialized with port 8080 (http)
++2024-10-22 21:16:35 - Initializing ProtocolHandler ["http-nio-8080"]
++2024-10-22 21:16:35 - Starting service [Tomcat]
++2024-10-22 21:16:35 - Starting Servlet engine: [Apache Tomcat/10.1.30]
++2024-10-22 21:16:35 - Initializing Spring embedded WebApplicationContext
++2024-10-22 21:16:35 - Root WebApplicationContext: initialization completed in 652 ms
++2024-10-22 21:16:35 - HHH000204: Processing PersistenceUnitInfo [name: default]
++2024-10-22 21:16:35 - HHH000412: Hibernate ORM core version 6.5.3.Final
++2024-10-22 21:16:35 - HHH000026: Second-level cache disabled
++2024-10-22 21:16:35 - No LoadTimeWeaver setup: ignoring JPA class transformer
++2024-10-22 21:16:35 - HikariPool-1 - Starting...
++2024-10-22 21:16:35 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ec3944
++2024-10-22 21:16:35 - HikariPool-1 - Start completed.
++2024-10-22 21:16:35 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
++2024-10-22 21:16:36 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
++2024-10-22 21:16:36 - Initialized JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 21:16:36 - Hibernate is in classpath; If applicable, HQL parser will be used.
++2024-10-22 21:16:36 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
++2024-10-22 21:16:36 - Starting ProtocolHandler ["http-nio-8080"]
++2024-10-22 21:16:36 - Tomcat started on port 8080 (http) with context path '/'
++2024-10-22 21:16:36 - Started Hw3Application in 2.492 seconds (process running for 2.827)
++2024-10-22 21:19:04 - Initializing Spring DispatcherServlet 'dispatcherServlet'
++2024-10-22 21:19:04 - Initializing Servlet 'dispatcherServlet'
++2024-10-22 21:19:04 - Completed initialization in 1 ms
++2024-10-22 21:19:04 - Request: GET /actor/1 with parameters [1]
++2024-10-22 21:19:04 - Method result: <200 OK OK,ApiResponse(code=1000, message=null, result=Actor{first_name='PENELOPE', last_name='GUINESS'}),[]>
++2024-10-22 21:19:22 - Request: GET /actor/1000 with parameters [1000]
++2024-10-22 21:19:22 - Exception in method: getActorById - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 21:19:22 - Request: GET /actor/1000 with parameters [com.wnc.hw3.exception.AppException: Actor not existed]
++2024-10-22 21:19:22 - Method result: <404 NOT_FOUND Not Found,ApiResponse(code=1005, message=Actor not existed, result=null),[]>
++2024-10-22 21:19:45 - Closing JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 21:19:45 - HikariPool-1 - Shutdown initiated...
++2024-10-22 21:19:45 - HikariPool-1 - Shutdown completed.
++2024-10-22 21:19:52 - HV000001: Hibernate Validator 8.0.1.Final
++2024-10-22 21:19:52 - Starting Hw3Application using Java 22 with PID 13462 (/Users/aaa/SampleCode/WNC/hw3/target/classes started by aaa in /Users/aaa/SampleCode/WNC/hw3)
++2024-10-22 21:19:52 - No active profile set, falling back to 1 default profile: "default"
++2024-10-22 21:19:53 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
++2024-10-22 21:19:53 - Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
++2024-10-22 21:19:53 - Tomcat initialized with port 8080 (http)
++2024-10-22 21:19:53 - Initializing ProtocolHandler ["http-nio-8080"]
++2024-10-22 21:19:53 - Starting service [Tomcat]
++2024-10-22 21:19:53 - Starting Servlet engine: [Apache Tomcat/10.1.30]
++2024-10-22 21:19:53 - Initializing Spring embedded WebApplicationContext
++2024-10-22 21:19:53 - Root WebApplicationContext: initialization completed in 660 ms
++2024-10-22 21:19:53 - HHH000204: Processing PersistenceUnitInfo [name: default]
++2024-10-22 21:19:53 - HHH000412: Hibernate ORM core version 6.5.3.Final
++2024-10-22 21:19:53 - HHH000026: Second-level cache disabled
++2024-10-22 21:19:53 - No LoadTimeWeaver setup: ignoring JPA class transformer
++2024-10-22 21:19:53 - HikariPool-1 - Starting...
++2024-10-22 21:19:54 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f6e6f50
++2024-10-22 21:19:54 - HikariPool-1 - Start completed.
++2024-10-22 21:19:54 - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
++2024-10-22 21:19:54 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
++2024-10-22 21:19:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
++2024-10-22 21:19:54 - Hibernate is in classpath; If applicable, HQL parser will be used.
++2024-10-22 21:19:54 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
++2024-10-22 21:19:55 - Starting ProtocolHandler ["http-nio-8080"]
++2024-10-22 21:19:55 - Tomcat started on port 8080 (http) with context path '/'
++2024-10-22 21:19:55 - Started Hw3Application in 2.527 seconds (process running for 2.861)
++2024-10-22 21:21:18 - Initializing Spring DispatcherServlet 'dispatcherServlet'
++2024-10-22 21:21:18 - Initializing Servlet 'dispatcherServlet'
++2024-10-22 21:21:18 - Completed initialization in 1 ms
++2024-10-22 21:21:18 - Request: GET /actor/2 with parameters [2]
++2024-10-22 21:21:18 - Method result: <200 OK OK,ApiResponse(code=1000, message=null, result=Actor{first_name='NICK', last_name='WAHLBERG'}),[]>
++2024-10-22 21:24:40 - Request: GET /actor/2 with parameters [2]
++2024-10-22 21:24:40 - Method result: <200 OK OK,ApiResponse(code=1000, message=null, result=Actor{first_name='NICK', last_name='WAHLBERG'}),[]>
++2024-10-22 21:24:41 - Request: GET /actor/2 with parameters [2]
++2024-10-22 21:24:41 - Method result: <200 OK OK,ApiResponse(code=1000, message=null, result=Actor{first_name='NICK', last_name='WAHLBERG'}),[]>
++2024-10-22 21:24:41 - Request: GET /actor/2 with parameters [2]
++2024-10-22 21:24:41 - Method result: <200 OK OK,ApiResponse(code=1000, message=null, result=Actor{first_name='NICK', last_name='WAHLBERG'}),[]>
++2024-10-22 21:25:10 - Request: GET /actor/10000 with parameters [10000]
++2024-10-22 21:25:10 - Exception in method: getActorById - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 21:25:10 - Request: GET /actor/10000 with parameters [com.wnc.hw3.exception.AppException: Actor not existed]
++2024-10-22 21:25:10 - Method result: <404 NOT_FOUND Not Found,ApiResponse(code=1005, message=Actor not existed, result=null),[]>
++2024-10-22 21:25:11 - Request: GET /actor/10000 with parameters [10000]
++2024-10-22 21:25:11 - Exception in method: getActorById - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 21:25:11 - Request: GET /actor/10000 with parameters [com.wnc.hw3.exception.AppException: Actor not existed]
++2024-10-22 21:25:11 - Method result: <404 NOT_FOUND Not Found,ApiResponse(code=1005, message=Actor not existed, result=null),[]>
++2024-10-22 21:25:12 - Request: GET /actor/10000 with parameters [10000]
++2024-10-22 21:25:12 - Exception in method: getActorById - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 21:25:12 - Request: GET /actor/10000 with parameters [com.wnc.hw3.exception.AppException: Actor not existed]
++2024-10-22 21:25:12 - Method result: <404 NOT_FOUND Not Found,ApiResponse(code=1005, message=Actor not existed, result=null),[]>
++2024-10-22 21:25:12 - Request: GET /actor/10000 with parameters [10000]
++2024-10-22 21:25:12 - Exception in method: getActorById - Actor not existed
++com.wnc.hw3.exception.AppException: Actor not existed
++	at com.wnc.hw3.service.ActorService.lambda$getSingleActor$0(ActorService.java:29)
++	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
++	at com.wnc.hw3.service.ActorService.getSingleActor(ActorService.java:29)
++	at com.wnc.hw3.controller.ActorController.getActorById(ActorController.java:61)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
++	at com.wnc.hw3.aop.LoggingAspect.logAround(LoggingAspect.java:33)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:637)
++	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:627)
++	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
++	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
++	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
++	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
++	at com.wnc.hw3.controller.ActorController$$SpringCGLIB$$0.getActorById(<generated>)
++	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
++	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
++	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
++	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
++	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
++	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
++	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
++	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
++	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
++	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
++	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
++	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
++	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
++	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
++	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
++	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
++	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
++	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
++	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
++	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
++	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
++	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
++	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
++	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
++	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
++	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
++	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
++	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
++	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
++	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
++	at java.base/java.lang.Thread.run(Thread.java:1570)
++2024-10-22 21:25:12 - Request: GET /actor/10000 with parameters [com.wnc.hw3.exception.AppException: Actor not existed]
++2024-10-22 21:25:12 - Method result: <404 NOT_FOUND Not Found,ApiResponse(code=1005, message=Actor not existed, result=null),[]>
